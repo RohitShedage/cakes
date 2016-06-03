@@ -19,7 +19,7 @@ var storage =   multer.diskStorage({
   }
 });
 
-var upload = multer({ storage : storage}).single('userPhoto');
+var upload = multer({ storage : storage}).single('cakePhoto');
 
 
 
