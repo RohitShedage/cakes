@@ -36,6 +36,7 @@ app.get('/',function(req,res){
 
 
 app.get('/api/photo/:photoId', function(req,res){
+  console.log("Someone Calling get PHOTO");
     var url = path.join(__dirname, 'uploads/' + req.params.photoId );
     var file = fs.readFileSync(url, 'binary');
 

@@ -1,6 +1,7 @@
 var Cake = require('../models/Cake');
 
 module.exports.listAll = function getOrders(req, res){
+	console.log("Someone Calling listAll");
 	Cake.find({}, function(err, results){
 		return res.json(results);
 	});
