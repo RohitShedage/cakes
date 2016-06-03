@@ -7,7 +7,7 @@ path = require('path'),
 fs = require('fs'),
 cake = require('./app/server/Cake');
 
-mongoose.connect('mongodb://root:9SSyro8I4bHx@ec2-54-165-229-42.compute-1.amazonaws.com:27017/admin');
+mongoose.connect('mongodb://chatak:chatak@ec2-54-165-229-42.compute-1.amazonaws.com:27017/admin');
 //mongoose.connect('mongodb://localhost:27017/cakes');
 
 var storage =   multer.diskStorage({
