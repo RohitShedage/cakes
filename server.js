@@ -5,17 +5,18 @@ bodyParser = require('body-parser'),
 multer  =   require('multer'),
 path = require('path'),
 fs = require('fs'),
+payload = require('request-payload');
 cake = require('./app/server/Cake');
 
-
-mongoose.connect('mongodb://localhost:27017/cakes');
+mongoose.connect('mongodb://root:9SSyro8I4bHxec2-54-165-229-42.compute-1.amazonaws.com:27017/cakes');
+//mongoose.connect('mongodb://localhost:27017/cakes');
 
 var storage =   multer.diskStorage({
   destination: function (req, file, callback) {
     callback(null, './uploads');
   },
   filename: function (req, file, callback) {
-    callback(null, '12');
+    callback(null, req.body.cakeId);
   }
 });
 
@@ -50,10 +51,9 @@ app.post('/api/photo',function(req,res){
         if(err) {
             return res.end("Error uploading file.");
         }
-        res.end("File is uploaded");
+        return cake.create(req,res);
     });
 });
-
 
 
 app.listen(3000, function() {

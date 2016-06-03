@@ -1,20 +1,4 @@
-var Cake = require('../models/Cake'),
-multer  =   require('multer'),
-path = require('path'),
-fs = require('fs');
-
-
-var storage =   multer.diskStorage({
-  destination: function (req, file, callback) {
-    callback(null, './uploads');
-  },
-  filename: function (req, file, callback) {
-    callback(null, req.params.cakeId);
-  }
-});
-
-var upload = multer({ storage : storage}).single();
-
+var Cake = require('../models/Cake');
 
 module.exports.listAll = function getOrders(req, res){
 	Cake.find({}, function(err, results){
