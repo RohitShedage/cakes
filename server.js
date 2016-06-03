@@ -5,7 +5,6 @@ bodyParser = require('body-parser'),
 multer  =   require('multer'),
 path = require('path'),
 fs = require('fs'),
-payload = require('request-payload');
 cake = require('./app/server/Cake');
 
 mongoose.connect('mongodb://root:9SSyro8I4bHxec2-54-165-229-42.compute-1.amazonaws.com:27017/cakes');
